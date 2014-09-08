@@ -30,6 +30,31 @@ Indices and tables
 
 
 ***************
+Converting Code
+***************
+
+1. Convert code to run with Trollius.
+2. Change imports::
+
+    - from trollius import coroutine, From, Return
+    + from trololio import coroutine, From, Return
+
+    - import trollius
+    + from trololio import asyncio
+
+3. If you used the second import style::
+
+    - trollius.*
+    + asyncio.*
+
+
+:note: Make sure you use :func:`coroutine`, :func:`From` and :exc:`Return` from
+       :mod:`trololio`. Otherwise an ImportError will be raised when running
+       with :mod:`py3:asyncio`.
+
+
+
+***************
 Module contents
 ***************
 
