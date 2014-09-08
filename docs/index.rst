@@ -49,7 +49,7 @@ Converting Code
 
 
 :note: Make sure you use :func:`coroutine`, :func:`From` and :exc:`Return` from
-       :mod:`trololio`. Otherwise an ImportError will be raised when running
+       :mod:`trololio`. Otherwise an :exc:`ImportError` will be raised when running
        with :mod:`py3:asyncio`.
 
 
