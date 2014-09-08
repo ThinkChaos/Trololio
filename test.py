@@ -1,5 +1,4 @@
 from trololio import asyncio, coroutine, From, Return
-from os import environ
 
 
 @coroutine
@@ -13,8 +12,6 @@ def coro_yield(sleep_time):
 
 
 if __name__ == '__main__':
-    assert environ.get('PYTHONASYNCIODEBUG') == environ.get('TROLLIUSDEBUG')
-
     loop = asyncio.get_event_loop()
 
     try:
