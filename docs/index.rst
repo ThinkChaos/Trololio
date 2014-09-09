@@ -5,8 +5,8 @@ Trololio: Trollius and asyncio compatibility library
 .. module:: trololio
    :synopsis: Trollius and asyncio compatibility
 
-Trololio it allows your program to have a *soft* dependency on :mod:`trollius`
-in Python versions where :mod:`py3:asyncio` (aka Tulip) is part of the standard
+Trololio allows your program to have a *soft* dependency on :mod:`trollius` in
+Python versions where :mod:`py3:asyncio` (aka Tulip) is part of the standard
 library.
 
 Trololio provides a compatibility layer for Trollius and asyncio, it addresses
