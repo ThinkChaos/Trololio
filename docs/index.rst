@@ -5,13 +5,17 @@ Trololio: Trollius and asyncio compatibility library
 .. module:: trololio
    :synopsis: Trollius and asyncio compatibility
 
-Trololio provides a compatibility layer for Trollius and asyncio (aka Tulip).
-It addresses the differences listed in `Trollius and Tulip
+Trololio it allows your program to have a *soft* dependency on :mod:`trollius`
+in Python versions where :mod:`py3:asyncio` (aka Tulip) is part of the standard
+library.
+
+Trololio provides a compatibility layer for Trollius and asyncio, it addresses
+the differences listed in `Trollius and Tulip
 <http://trollius.readthedocs.org/asyncio.html>`_:
 
 * Allows the use of Trollius' syntax with :mod:`py3:asyncio`.
 * Provides missing objects and aliases for the others.
-* Synchronizes debug environnement variables.
+* Synchronizes debug environment variables.
 
 .. seealso::
 
@@ -33,8 +37,9 @@ Indices and tables
 Converting Code
 ***************
 
-1. Convert code to run with Trollius.
-2. Change imports::
+1. If your code was written for asyncio, convert it to use Trollius.
+
+2. Change your :mod:`trollius` imports::
 
     - from trollius import coroutine, From, Return
     + from trololio import coroutine, From, Return
@@ -45,12 +50,12 @@ Converting Code
 3. If you used the second import style::
 
     - trollius.*
-    + asyncio.*
+    + [trololio.]asyncio.*
 
 
 :note: Make sure you use :func:`coroutine`, :func:`From` and :exc:`Return` from
-       :mod:`trololio`. Otherwise an :exc:`ImportError` will be raised when running
-       with :mod:`py3:asyncio`.
+       :mod:`trololio` and not :mod:`asyncio`. Otherwise an :exc:`ImportError`
+       will be raised when running with :mod:`py3:asyncio`.
 
 
 
