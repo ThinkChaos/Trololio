@@ -55,7 +55,7 @@ Converting Code
 
 :note: Make sure you use :func:`coroutine`, :func:`From` and :exc:`Return` from
        :mod:`trololio` and not :mod:`asyncio`. Otherwise an :exc:`ImportError`
-       will be raised when running with :mod:`py3:asyncio`.
+       will be raised when running with :mod:`py3:asyncio` (Tulip).
 
 
 
@@ -66,7 +66,7 @@ Module contents
 .. data:: ASYNCIO
 
    A boolean indicating if :data:`asyncio` (:mod:`trololio`'s submodule) is
-   :mod:`py3:asyncio`.
+   :mod:`py3:asyncio` (Tulip).
 
 .. data:: TROLLIUS
 
@@ -181,6 +181,7 @@ asyncio submodule
    :synopsis: Either Trollius or asyncio.
 
 Trololio provides the :mod:`asyncio` submodule. It is either
-:mod:`trollius:trollius` (first choice) or :mod:`py3:asyncio` (fallback).
+:mod:`trollius:trollius`, the first choice, or :mod:`py3:asyncio` (Tulip), the
+fallback.
 
 :note: If neither module was found, an :exc:`ImportError` is raised.
