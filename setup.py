@@ -10,7 +10,7 @@ def read(*paths):
 
 setup(
     name='Trololio',
-    version='1.0b',
+    version='1.0',
     description='Trollius and asyncio compatibility library',
     long_description=read('README.rst'),
     url='http://github.com/ThinkChaos/Trololio/',
@@ -20,7 +20,7 @@ setup(
     py_modules=['trololio'],
     include_package_data=True,
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',

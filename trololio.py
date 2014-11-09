@@ -1,6 +1,4 @@
-from functools import wraps
 from imp import find_module, load_module
-from inspect import isgeneratorfunction
 import os
 
 
@@ -35,6 +33,10 @@ for _mod_name in ['trollius', 'asyncio']:
             'trololio.asyncio', _mod_file,
             _mod_pathname, _mod_description
         )
+
+        if _mod_file is not None:
+            _mod_file.close()
+
         break
 
 if asyncio is None:
@@ -75,6 +77,7 @@ else:
         return obj
 
     class Return(Exception):
+
         def __init__(self, *args):
             if not args:
                 self.value = None
@@ -107,6 +110,9 @@ else:
     # exec on definition instead of on every yield for less overhead
     exec(dedent(
         """
+        from functools import wraps
+        from inspect import isgeneratorfunction
+
         def coroutine(func):
             if not isgeneratorfunction(func):
                 coro = asyncio.coroutine(func)
